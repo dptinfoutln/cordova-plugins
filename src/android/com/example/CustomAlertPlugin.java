@@ -37,7 +37,11 @@ public class CustomAlertPlugin extends CordovaPlugin {
       showCustomAlert(title, content);
       callbackContext.success();
       return true;
-    } else {
+    } else if(action.equals("test")) {
+      final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
+      callbackContext.sendPluginResult(result);
+      return true;
+    else {
       callbackContext.error("CustomAlertPlugin." + action + " not found !");
       return false;
     }
