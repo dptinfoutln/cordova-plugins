@@ -1,1 +1,1 @@
-# cordova-plugins
+# Cordova Plugins
