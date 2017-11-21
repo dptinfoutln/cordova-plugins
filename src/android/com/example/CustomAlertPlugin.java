@@ -16,7 +16,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
 
-
 import android.util.Log;
 
 import java.util.Date;
@@ -41,7 +40,7 @@ public class CustomAlertPlugin extends CordovaPlugin {
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
       callbackContext.sendPluginResult(result);
       return true;
-    else {
+    } else {
       callbackContext.error("CustomAlertPlugin." + action + " not found !");
       return false;
     }
