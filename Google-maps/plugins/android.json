@@ -1,0 +1,19 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyDo41Uv4sVrp7yMnydvwwqemuxy3ekNw6Y",
+      "PACKAGE_NAME": "com.sbellanger.googleMapsApp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.sbellanger.googleMapsApp"
+    }
+  },
+  "dependent_plugins": {}
+}
