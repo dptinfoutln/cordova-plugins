@@ -1,6 +1,6 @@
 # Création d'un plugin
 
-Dans cette première partie, nous allons réaliser un plugin Jquery pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de ce familiariser avec la création d'un plugin.
+Dans cette première partie, nous allons réaliser un plugin Jquery pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de se familiariser avec la création d'un plugin.
 Le projet est composé de 3 fichiers :
   - Un fichier CustomAlertPlugin.java qui se situe dans le dossier src/android/com/example/
   - Un fichier plugin.xml qui contient l'ensemble des configurations du plugin
@@ -18,24 +18,24 @@ Le projet est composé de 3 fichiers :
    └── plugin.js
 ```
  
-Nous vous invitons à regarder la documentation officiel de Cordova pour la création d'un plugin [ici](https://cordova.apache.org/docs/fr/latest/guide/hybrid/plugins/)
+Nous vous invitons à regarder la documentation officielle de Cordova pour la création d'un plugin [ici](https://cordova.apache.org/docs/fr/latest/guide/hybrid/plugins/)
 
 ### Première étape : le code Java
 
-La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode execute et de pouvoir récupérer l'ensemble des différents attribues de la classe.
+La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode exécute et de pouvoir récupérer l'ensemble des différents attribues de la classe.
 Pour plus d'informations sur la classe [CordovaPlugin](https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaPlugin.java).
 
-Le but de cette première partie est donc de remplir la fonction `execute(String action, JSONArray args, final CallbackContext callbackContext)` qui va permetre d'executer les différentes fonctions java de notre plugin en testant la valeur d'```action``` ainsi que la fonction `showCustomAlert(String title, String content)` pour créer la boite de dialogue en customisant le titre et le contenu.
- - `String action` est le nom de la fonction du plugin à executer 
+Le but de cette première partie est donc de remplir la fonction `execute(String action, JSONArray args, final CallbackContext callbackContext)` qui va permettre d'exécuter les différentes fonctions Java de notre plugin en testant la valeur d'```action``` ainsi que la fonction `showCustomAlert(String title, String content)` pour créer la boite de dialogue en customisant le titre et le contenu.
+ - `String action` est le nom de la fonction du plugin à exécuter 
  - `JSONArray args` Le json qui contient l'ensemble des paramètres (ici le titre est la description de la boite de dialogue)
- - `CallbackContext callbackContext` qui permet de retourner si l'utilisation dun plugin a été un succès ou non
+ - `CallbackContext callbackContext` qui permet de retourner si l'utilisation d'un plugin a été un succès ou non
 
 Pour créer une boite de dialogue en Android, nous utiliserons la classe  [AlertDialog](https://developer.android.com/guide/topics/ui/dialogs.html).
 
 
 ### Deuxième étape : l'interface JS
 
-La deuxième étape est de réaliser l'interface entre notre code Java écrit précédement et le javascript. Dans le fichier `plugin.js`, nous allons donc déclarer nos différentes fonctions de la manière suivante :
+La deuxième étape est de réaliser l'interface entre notre code Java écrit précédemment et le javascript. Dans le fichier `plugin.js`, nous allons donc déclarer nos différentes fonctions de la manière suivante :
 ```javascript
     window.echo = function(str, callback) {
         cordova.exec(callback, function(err) {
@@ -46,7 +46,7 @@ La deuxième étape est de réaliser l'interface entre notre code Java écrit pr
 
 ### Dernière étape : tester le plugin
 
-La première étape est de créer un nouveau projet cordova puis d'ajouter la plateforme android. Pour finir on ajoute le plugin que l'on vient de créer à notre plugin.
+La première étape est de créer un nouveau projet C puis d'ajouter la plateforme Android. Pour finir on ajoute le plugin que l'on vient de créer à notre nouveau projet.
 ```sh
 $ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]`
 $ cordova platform add android@6.1.0
@@ -69,23 +69,23 @@ A vous de jouer !
 
 # Google maps
 
-Pour la deuxième partie de ce TP, nous allons afficher une google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de  [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback).
+Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback).
 
-Dans un premier temps, nous allons créer un nouveau projet cordova puis ajouter le plugin cordova_plugin-googlemaps :
+Dans un premier temps, nous allons créer un nouveau projet Cordova puis ajouter le plugin `cordova_plugin-googlemaps` :
 ```sh
 $ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]
 $ cordova plugin add cordova-plugin-googlemaps     --variable API_KEY_FOR_ANDROID="AIzaSyDo41Uv4sVrp7yMnydvwwqemuxy3ekNw6Y"
 ```
 
-Pour ce TP, nous avons générer la cle pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous même une cle, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr)
+Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr)
 
 ### Première étape : Affichage de la Google maps
 
 Le but de cette première partie est d'afficher une Google maps sur l'ensemble de l'écran. Nous utiliserons le fichier maps.js pour ajouter l'ensemble de votre code javascript pour l'affichage et la gestion de notre Google maps.
 
-1. Lorsque l'ensemble de votre mobile est pret, initialiser la Google maps avec le plugin importé.
+1. Lorsque l'ensemble de votre mobile est prêt, initialiser la Google maps avec le plugin importé.
 2. Créer une balise pour afficher votre Google maps
-3. Une fois que la Gogole maps est dans le status `plugin.google.maps.event.MAP_READY`, afficher une alert.
+3. Une fois que la Gogole maps est dans le statut `plugin.google.maps.event.MAP_READY`, afficher une [alert](https://www.w3schools.com/jsref/met_win_alert.asp) javascript.
 
 ### Deuxième étape : Affichage d'un marqueur
 
