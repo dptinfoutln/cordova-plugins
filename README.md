@@ -69,7 +69,7 @@ A vous de jouer !
 
 # Google maps
 
-Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback).
+Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
 
 Dans un premier temps, nous allons créer un nouveau projet Cordova puis ajouter le plugin `cordova_plugin-googlemaps` :
 ```sh
@@ -89,13 +89,13 @@ Le but de cette première partie est d'afficher une Google maps sur l'ensemble d
 
 ### Deuxième étape : Affichage d'un marqueur
 
-La deuxième étape est de d'afficher un marqueur sur la carte. La documentation pour les marqueur se situe [ici](https://developers.google.com/maps/documentation/javascript/markers?hl=fr). Ce marqueur sera positionné en :
+La deuxième étape est de d'afficher un marqueur sur la carte. La documentation pour les marqueurs se situe [ici](https://developers.google.com/maps/documentation/javascript/markers?hl=fr). Ce marqueur sera positionné en :
  - Latitude : 48.862725
  - Longitude : 2.287592000000018
 
 Pour ce qui est des paramètres complémentaires, libre à votre imagination.
 
-A vous d'en déduire ou ce marqueur se situe !
+À vous d'en déduire ou ce marqueur se situe !
 
 ### Dernière étape : Tunning !
 
@@ -104,7 +104,7 @@ Pour cette dernière étape, nous allons rajouter une animation sur la caméra. 
 animateCamera(CameraUpdate update, GoogleMap.CancelableCallback callback) 
 ```
 
-Pour les différents paramètres :
+Pour les différents paramètres, ici par défaut pour le TP :
  - Un zoom de 17
  - un tilt de 60
  - un bearing de 140
