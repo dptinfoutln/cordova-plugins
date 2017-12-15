@@ -9,7 +9,7 @@ bin/*
 !/plugins/fetch.json
 plugins/*
 platforms/*
-
+node_modules/
 ### Linux ###
 *~
 
