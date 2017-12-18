@@ -1,0 +1,30 @@
+{
+ "name": "fr-univ-tln-cordova-plugin-alert",
+ "version": "1.0.0",
+ "description": "Custom Alert Plugin Example",
+ "cordova": {
+  "id": "fr-univ-tln-cordova-plugin-alert",
+  "platforms": [
+   "android",
+   "ios"
+  ]
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/dptinfoutln/cordova-plugins.git"
+ },
+ "keywords": [
+  "cordova",
+  "alert",
+  "plugin",
+  "university",
+  "toulon",
+  "cordova-android"
+ ],
+ "author": "YMonnier, stephenbellanger",
+ "license": "MIT",
+ "bugs": {
+  "url": "https://github.com/dptinfoutln/cordova-plugins/issues"
+ },
+ "homepage": "https://github.com/dptinfoutln/cordova-plugins#readme"
+}
