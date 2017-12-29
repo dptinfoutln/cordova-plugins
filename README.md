@@ -71,13 +71,9 @@ A vous de jouer !
 
 Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
 
-Dans un premier temps, nous allons créer un nouveau projet Cordova puis ajouter le plugin `cordova_plugin-googlemaps` :
-```sh
-$ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]
-$ cordova plugin add cordova-plugin-googlemaps     --variable API_KEY_FOR_ANDROID="AIzaSyDo41Uv4sVrp7yMnydvwwqemuxy3ekNw6Y"
-```
+Le projet Cordova est déjà créer et paramétrer avec une clé générer pour utiliser l'API Google maps. De ce fait, dans cette partie du TP, vous n'aurez seulement à vous concentrer sur l'utilisation d'un plugin.
 
-Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr)
+Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr). Dans le cadre de ce TP, il n'est pas nécessaire d'en générer une pour pouvoir utiliser l'API Google maps. En effet, le nombre de requête limité est largement suffisant pour l'ensemble des membres de la promotion.
 
 ### Première étape : Affichage de la Google maps
 
@@ -90,8 +86,8 @@ Le but de cette première partie est d'afficher une Google maps sur l'ensemble d
 ### Deuxième étape : Affichage d'un marqueur
 
 La deuxième étape est de d'afficher un marqueur sur la carte. La documentation pour les marqueurs se situe [ici](https://developers.google.com/maps/documentation/javascript/markers?hl=fr). Ce marqueur sera positionné en :
- - Latitude : 48.862725
- - Longitude : 2.287592000000018
+ - Latitude : 43.117475
+ - Longitude : 5.937939
 
 Pour ce qui est des paramètres complémentaires, libre à votre imagination.
 
@@ -105,13 +101,21 @@ animateCamera(CameraUpdate update, GoogleMap.CancelableCallback callback)
 ```
 
 Pour les différents paramètres, ici par défaut pour le TP :
- - Un zoom de 17
+ - Pour la latitude et la longitude, ce sont les mêmes que le marker précédent
+ - Un zoom de 8
  - un tilt de 60
  - un bearing de 140
  - une duration de 5000
 
+### Pour les plus rapide 
+
+Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les affichés sous formes de marker sur la Google maps.
+Ces positions correspondent à des restaurants situé un peu partout autour de Toulon. Elles sont disponibles sous cette [URL](https://demo9254333.mockable.io/restaurants).
+
+De ce fait, vous aurez besoin d'utiliser les requêtes [AJAX](http://api.jquery.com/jquery.ajax/) avec JQuery. Pas de panique ! La librairie est déjà ajoutée au projet.
+
 Si tout cela fonctionne, félicitations vous pouvez rentrer chez vous !
 
-
 Bon courage :)
+
 
