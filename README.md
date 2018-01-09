@@ -22,7 +22,7 @@ Nous vous invitons à regarder la documentation officielle de Cordova pour la cr
 
 ### Première étape : le code Java
 
-La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode exécute et de pouvoir récupérer l'ensemble des différents attribues de la classe.
+La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode exécute et de pouvoir récupérer l'ensemble des différents attribus de la classe.
 Pour plus d'informations sur la classe [CordovaPlugin](https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaPlugin.java).
 
 Le but de cette première partie est donc de remplir la fonction `execute(String action, JSONArray args, final CallbackContext callbackContext)` qui va permettre d'exécuter les différentes fonctions Java de notre plugin en testant la valeur d'```action``` ainsi que la fonction `showCustomAlert(String title, String content)` pour créer la boite de dialogue en customisant le titre et le contenu.
@@ -46,7 +46,7 @@ La deuxième étape est de réaliser l'interface entre notre code Java écrit pr
 
 ### Dernière étape : tester le plugin
 
-La première étape est de créer un nouveau projet C puis d'ajouter la plateforme Android. Pour finir on ajoute le plugin que l'on vient de créer à notre nouveau projet.
+La première étape est de créer un nouveau projet C puis d'ajouter la plateforme Android. Pour finir, on ajoute le plugin que l'on vient de créer à notre nouveau projet.
 ```sh
 $ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]`
 $ cordova platform add android@6.1.0
@@ -69,11 +69,11 @@ A vous de jouer !
 
 # Google maps
 
-Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développer par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
+Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développé par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
 
-Le projet Cordova est déjà créer et paramétrer avec une clé générer pour utiliser l'API Google maps. De ce fait, dans cette partie du TP, vous n'aurez seulement à vous concentrer sur l'utilisation d'un plugin.
+Le projet Cordova est déjà créé et paramétré avec une clé générée pour utiliser l'API Google maps. De ce fait, dans cette partie du TP, vous n'aurez seulement qu'à vous concentrer sur l'utilisation d'un plugin.
 
-Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr). Dans le cadre de ce TP, il n'est pas nécessaire d'en générer une pour pouvoir utiliser l'API Google maps. En effet, le nombre de requête limité est largement suffisant pour l'ensemble des membres de la promotion.
+Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr). Dans le cadre de ce TP, il n'est pas nécessaire d'en générer une pour pouvoir utiliser l'API Google maps. En effet, le nombre limite de requête est largement suffisant pour l'ensemble des membres de la promotion.
 
 ### Première étape : Affichage de la Google maps
 
@@ -85,13 +85,13 @@ Le but de cette première partie est d'afficher une Google maps sur l'ensemble d
 
 ### Deuxième étape : Affichage d'un marqueur
 
-La deuxième étape est de d'afficher un marqueur sur la carte. La documentation pour les marqueurs se situe [ici](https://developers.google.com/maps/documentation/javascript/markers?hl=fr). Ce marqueur sera positionné en :
+La deuxième étape consiste à afficher un marqueur sur la carte. La documentation pour les marqueurs se situe [ici](https://developers.google.com/maps/documentation/javascript/markers?hl=fr). Ce marqueur sera positionné en :
  - Latitude : 43.117475
  - Longitude : 5.937939
 
 Pour ce qui est des paramètres complémentaires, libre à votre imagination.
 
-À vous d'en déduire ou ce marqueur se situe !
+À vous de trouver où ce marqueur se situe !
 
 ### Dernière étape : Tunning !
 
@@ -109,8 +109,8 @@ Pour les différents paramètres, ici par défaut pour le TP :
 
 ### Pour les plus rapide 
 
-Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les affichés sous formes de marker sur la Google maps.
-Ces positions correspondent à des restaurants situé un peu partout autour de Toulon. Elles sont disponibles sous cette [URL](https://demo9254333.mockable.io/restaurants).
+Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les afficher sous formes de `marker` sur la Google maps.
+Ces positions correspondent à des restaurants situés un peu partout autour de Toulon. Elles sont disponibles sous cette [URL](https://demo9254333.mockable.io/restaurants).
 
 De ce fait, vous aurez besoin d'utiliser les requêtes [AJAX](http://api.jquery.com/jquery.ajax/) avec JQuery. Pas de panique ! La librairie est déjà ajoutée au projet.
 
