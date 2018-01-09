@@ -2,9 +2,9 @@
 
 Dans cette première partie, nous allons réaliser un plugin Jquery pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de se familiariser avec la création d'un plugin.
 Le projet est composé de 3 fichiers :
-  - Un fichier CustomAlertPlugin.java qui se situe dans le dossier src/android/com/example/
-  - Un fichier plugin.xml qui contient l'ensemble des configurations du plugin
-  - Un fichier plugin.js qui permet de faire l'interface entre le code source Java et notre plugin. Il se situe dans le dossier www/
+  - Un fichier `CustomAlertPlugin.java` qui se situe dans le dossier `src/android/com/example/`
+  - Un fichier `plugin.xml` qui contient l'ensemble des configurations du plugin
+  - Un fichier `plugin.js` qui permet de faire l'interface entre le code source Java et notre plugin. Il se situe dans le dossier www/
  
 ```terminal 
 ├── package.json
@@ -12,7 +12,7 @@ Le projet est composé de 3 fichiers :
 ├── src
 │   └── android
 │       └── com
-│           └── example
+│           └── alert
 │               └── CustomAlertPlugin.java
 └── www
    └── plugin.js
@@ -22,15 +22,17 @@ Nous vous invitons à regarder la documentation officielle de Cordova pour la cr
 
 ### Première étape : le code Java
 
-La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode exécute et de pouvoir récupérer l'ensemble des différents attribus de la classe.
+La classe de notre plugin hérite de `CordovaPlugin` qui permet l'utilisation de la méthode `exec` et de pouvoir récupérer l'ensemble des différents attribus de la classe.
 Pour plus d'informations sur la classe [CordovaPlugin](https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaPlugin.java).
 
-Le but de cette première partie est donc de remplir la fonction `execute(String action, JSONArray args, final CallbackContext callbackContext)` qui va permettre d'exécuter les différentes fonctions Java de notre plugin en testant la valeur d'```action``` ainsi que la fonction `showCustomAlert(String title, String content)` pour créer la boite de dialogue en customisant le titre et le contenu.
+Le but de cette première partie est donc de remplir la fonction `execute(String action, JSONArray args, final CallbackContext callbackContext)` dans `src/android/com/example/CustomAlertPlugin.java` qui va permettre d'exécuter les différentes fonctions Java de notre plugin en testant la valeur d'```action``` ainsi que la fonction `showCustomAlert(String title, String content)` pour créer la boite de dialogue en customisant le titre et le contenu.
  - `String action` est le nom de la fonction du plugin à exécuter 
  - `JSONArray args` Le json qui contient l'ensemble des paramètres (ici le titre est la description de la boite de dialogue)
  - `CallbackContext callbackContext` qui permet de retourner si l'utilisation d'un plugin a été un succès ou non
 
 Pour créer une boite de dialogue en Android, nous utiliserons la classe  [AlertDialog](https://developer.android.com/guide/topics/ui/dialogs.html).
+
+*Tips : Utilisez `webView.getContext()` pour récupérer le contexte de la WebView.*
 
 
 ### Deuxième étape : l'interface JS
@@ -46,11 +48,12 @@ La deuxième étape est de réaliser l'interface entre notre code Java écrit pr
 
 ### Dernière étape : tester le plugin
 
-La première étape est de créer un nouveau projet C puis d'ajouter la plateforme Android. Pour finir, on ajoute le plugin que l'on vient de créer à notre nouveau projet.
+La première étape est de créer un nouveau projet Cordova puis d'ajouter la plateforme Android. Pour finir, on ajoute le plugin que l'on vient de créer à notre nouveau projet.
 ```sh
 $ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]`
+$ cp -r android-plugin/ /scratch/studio-[LOGIN-UTLN]/
 $ cordova platform add android@6.1.0
-$ cordova plugin add ../alert-plugin/
+$ cordova plugin add ../android-plugin/
 ```
 
 Pour vérifier que votre plugin a bien été ajouté, vous pouvez utiliser la commande suivante qui liste l'ensemble des plugins du projet :
@@ -58,7 +61,7 @@ Pour vérifier que votre plugin a bien été ajouté, vous pouvez utiliser la co
 $ cordova plugin ls
 ```
 
-Nous allons donc ajouter notre code dans la fonction `onDeviceReady` pour utiliser le plugin. Celui-ci va alors être exécuté lors du lancement de votre application :
+Nous allons donc ajouter notre code dans la fonction `onDeviceReady` (`www/js/index.js`) pour utiliser le plugin. Celui-ci va alors être exécuté lors du lancement de votre application :
 
 ```sh
 $ cordova build android
