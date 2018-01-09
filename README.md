@@ -2,9 +2,9 @@
 
 Dans cette première partie, nous allons réaliser un plugin Jquery pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de se familiariser avec la création d'un plugin.
 Le projet est composé de 3 fichiers :
-  - Un fichier `CustomAlertPlugin.java` qui se situe dans le dossier `src/android/com/example/`
-  - Un fichier `plugin.xml` qui contient l'ensemble des configurations du plugin
-  - Un fichier `plugin.js` qui permet de faire l'interface entre le code source Java et notre plugin. Il se situe dans le dossier www/
+ - Un fichier `CustomAlertPlugin.java` qui se situe dans le dossier `src/android/com/example/`
+ - Un fichier `plugin.xml` qui contient l'ensemble des configurations du plugin
+ - Un fichier `plugin.js` qui permet de faire l'interface entre le code source Java et notre plugin. Il se situe dans le dossier `www/`
  
 ```terminal 
 ├── package.json
@@ -70,21 +70,21 @@ $ cordova run android
 
 A vous de jouer !
 
-# Google maps
+# Google Maps
 
-Pour la deuxième partie de ce TP, nous allons afficher une Google maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développé par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
+Pour la deuxième partie de ce TP, nous allons afficher une Google Maps et balayer une partie de ses fonctionnalités. Le but est d'utiliser un plugin développé par une tierce personne. Vous pouvez vous inspirer de la documentation officiel de [Google maps](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.android.gms.maps.CameraUpdate,%20com.google.android.gms.maps.GoogleMap.CancelableCallback ).
 
-Le projet Cordova est déjà créé et paramétré avec une clé générée pour utiliser l'API Google maps. De ce fait, dans cette partie du TP, vous n'aurez seulement qu'à vous concentrer sur l'utilisation d'un plugin.
+Le projet Cordova est déjà créé et paramétré avec une clé générée pour utiliser l'API Google Maps. De ce fait, dans cette partie du TP, vous n'aurez seulement qu'à vous concentrer sur l'utilisation d'un plugin.
 
-Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr). Dans le cadre de ce TP, il n'est pas nécessaire d'en générer une pour pouvoir utiliser l'API Google maps. En effet, le nombre limite de requête est largement suffisant pour l'ensemble des membres de la promotion.
+Pour ce TP, nous avons généré la clé pour l'utilisation de l'API Google Maps. Si vous souhaitez générer vous-même une clé, c'est [ici](https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&hl=Fr). Dans le cadre de ce TP, il n'est pas nécessaire d'en générer une pour pouvoir utiliser l'API Google Maps. En effet, le nombre limite de requête est largement suffisant pour l'ensemble des membres de la promotion.
 
 ### Première étape : Affichage de la Google maps
 
-Le but de cette première partie est d'afficher une Google maps sur l'ensemble de l'écran. Nous utiliserons le fichier maps.js pour ajouter l'ensemble de votre code javascript pour l'affichage et la gestion de notre Google maps.
+Le but de cette première partie est d'afficher une Google Maps sur l'ensemble de l'écran. Nous utiliserons le fichier maps.js pour ajouter l'ensemble de votre code javascript pour l'affichage et la gestion de notre Google Maps.
 
-1. Lorsque l'ensemble de votre mobile est prêt, initialiser la Google maps avec le plugin importé.
-2. Créer une balise pour afficher votre Google maps
-3. Une fois que la Gogole maps est dans le statut `plugin.google.maps.event.MAP_READY`, afficher une [alert](https://www.w3schools.com/jsref/met_win_alert.asp) javascript.
+1. Lorsque l'ensemble de votre mobile est prêt, initialiser la Google Maps avec le plugin importé.
+2. Créer une balise pour afficher votre Google Maps
+3. Une fois que la Gogole Maps est dans le statut `plugin.google.maps.event.MAP_READY`, afficher une [alert](https://www.w3schools.com/jsref/met_win_alert.asp) javascript.
 
 ### Deuxième étape : Affichage d'un marqueur
 
@@ -112,7 +112,7 @@ Pour les différents paramètres, ici par défaut pour le TP :
 
 ### Pour les plus rapide 
 
-Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les afficher sous formes de `marker` sur la Google maps.
+Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les afficher sous formes de `marker` sur la Google Maps.
 Ces positions correspondent à des restaurants situés un peu partout autour de Toulon. Elles sont disponibles sous cette [URL](https://demo9254333.mockable.io/restaurants).
 
 De ce fait, vous aurez besoin d'utiliser les requêtes [AJAX](http://api.jquery.com/jquery.ajax/) avec JQuery. Pas de panique ! La librairie est déjà ajoutée au projet.
