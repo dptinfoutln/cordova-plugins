@@ -51,7 +51,6 @@ La deuxième étape est de réaliser l'interface entre notre code Java écrit pr
 La première étape est de créer un nouveau projet Cordova puis d'ajouter la plateforme Android. Pour finir, on ajoute le plugin que l'on vient de créer à notre nouveau projet.
 ```sh
 $ cordova create [nom_de_votre_app] [package] & cd [nom_de_votre_app]`
-$ cp -r android-plugin/ /scratch/studio-[LOGIN-UTLN]/
 $ cordova platform add android@6.1.0
 $ cordova plugin add ../android-plugin/
 ```
