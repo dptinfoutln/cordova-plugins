@@ -109,7 +109,7 @@ Pour les différents paramètres, ici par défaut pour le TP :
  - un bearing de 140
  - une duration de 5000
 
-### Pour les plus rapide 
+### Pour les plus rapides 
 
 Pour les plus rapides, nous vous proposons un petit challenge. Le but ? Récupérer des coordonnées GPS sur un serveur et les afficher sous formes de `marker` sur la Google Maps.
 Ces positions correspondent à des restaurants situés un peu partout autour de Toulon. Elles sont disponibles sous cette [URL](https://demo9254333.mockable.io/restaurants).
