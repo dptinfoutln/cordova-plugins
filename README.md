@@ -1,6 +1,6 @@
 # Création d'un plugin
 
-Dans cette première partie, nous allons réaliser un plugin Jquery pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de se familiariser avec la création d'un plugin.
+Dans cette première partie, nous allons réaliser un plugin pour afficher une boite de dialogue avec le design propre à Android. Le but de cet exercice est de se familiariser avec la création d'un plugin.
 Le projet est composé de 3 fichiers :
  - Un fichier `CustomAlertPlugin.java` qui se situe dans le dossier `src/android/com/example/`
  - Un fichier `plugin.xml` qui contient l'ensemble des configurations du plugin
